@@ -1,7 +1,7 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
-static/* linguist-vendored
+resources/* linguist-vendored
 
 ### STS ###
 .apt_generated
