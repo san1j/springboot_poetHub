@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<div th:replace="fragments/header">header</div>
+</head>
+
+<body>
+	<div class="container col-xs-12 col-sm-8 col-md-6 mx-auto">
+		<form class="border-class">
+			<div class="form-group">
+				<label for="first name">First Name</label> <input type="text"
+					placeholder="First Name" class="form-control" required="true">
+			</div>
+			<div class="form-group">
+				<label for="username">Last Name</label> <input type="text"
+					placeholder="Last Name" class="form-control" required="true">
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> <input type="email"
+					placeholder="Email" class="form-control" required="true">
+			</div>
+			<div class="form-group">
+				<label for="username">Username</label> <input type="text"
+					placeholder="Username" class="form-control" required="true">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label> <input type="password"
+					placeholder="Password" class="form-control" required="true" />
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+
+</body>
+
+<div th:replace="fragments/footer">footer</div>
+
+</html>
