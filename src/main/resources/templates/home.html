@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<div th:replace="fragments/header">header</div>
+</head>
+
+<body>
+	<figure class="figure">
+		<img
+			src="http://www.debtshepherd.com/wp-content/uploads/2013/01/paper-ink.jpg"
+			class="img-fluid mx-auto d-block col-lg-9" alt="ink and paper">
+
+		<div class="text-center" id="signUp">
+			<a th:href="@{/SignUp}">
+				<button type="button" class="btn btn-primary">Sign Up, it's
+					free!</button>
+			</a>
+		</div>
+
+		<figcaption
+			class="figure-caption text-black text-center font-weight-bold font-italic font-size">Share
+			your poems with the world!</figcaption>
+		<figure />
+		</div>
+</body>
+
+<div th:replace="fragments/footer">footer</div>
+
+</html>

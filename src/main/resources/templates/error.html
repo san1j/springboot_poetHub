@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<div th:replace="fragments/header">header</div>
+</head>
+<body>
+
+	<div class="container text-center" style="padding: 30px">
+		<h1>404 Page not found</h1>
+		<h3>
+			Please go back to the <a th:href="@{/}">homepage</a>
+		</h3>
+	</div>
+
+</body>
+
+<div th:replace="fragments/footer">footer</div>
+
+</html>
