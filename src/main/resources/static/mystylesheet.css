@@ -4,6 +4,7 @@
 
 body{
   padding-top:80px !important;
+  padding-bottom:40px;
 }
 
 .img-fluid{
@@ -26,9 +27,11 @@ body{
 
 .footer{
   background-color:#263238;
-  width:100%;
   padding:10px;
-  flex-shrink: 0;
+  margin-top:20px;
+  width:100%;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;    
 }
 
 .border-class{
