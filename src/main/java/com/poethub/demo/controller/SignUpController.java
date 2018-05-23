@@ -14,8 +14,8 @@ import com.poethub.demo.model.userModel;
 
 @Controller
 public class SignUpController {
-//	@Autowired
-//	private userRepo userRepo;
+	@Autowired
+	private userRepo userRepo;
 	
 	@GetMapping("/SignUp")
  	public String home(Model model) {
