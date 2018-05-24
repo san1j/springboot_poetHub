@@ -6,15 +6,15 @@
 
 <body>
 	<div class="container col-xs-12 col-sm-8 col-md-6 mx-auto">
-		<form class="border-class">
+		<form class="border-class" th:action="@{/login}" th:object="${userModel}" method="POST">
 			<div class="form-group">
 				<label for="username">Username</label> 
-				<input type="text"
+				<input type="text" th:field="*{username}"
 					placeholder="Username" class="form-control" required="true" >
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label> 
-				<input type="password"
+				<input type="password" th:field="*{password}"
 					placeholder="Password" class="form-control" required="true"/>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
