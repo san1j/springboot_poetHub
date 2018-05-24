@@ -1,0 +1,41 @@
+.nav-item:hover {
+  background-color: grey;
+}
+
+body{
+  padding-top:80px !important;
+  padding-bottom:40px;
+}
+
+.img-fluid{
+  height:350px;
+  filter: drop-shadow(8px 8px 10px #37474F);
+}
+ 
+*{
+   font-family: 'Times', 'Helvetica'
+}
+
+.figure-caption{
+    font-size:32px;
+    padding:30px;
+}
+
+#signUp{
+  padding-top:30px;
+}
+
+.footer{
+  background-color:#263238;
+  padding:10px;
+  margin-top:20px;
+  width:100%;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;    
+}
+
+.border-class{
+  border:thin #D3D3D3 solid;
+  margin:20px;
+  padding:20px;
+}
