@@ -45,7 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			auth
 				.jdbcAuthentication()
 				.dataSource(dataSource)
-     			.usersByUsernameQuery("select username, password,enabled from USER where username=?");
+     			.usersByUsernameQuery("select username, password,enabled from USER where username=?")
+     			.authoritiesByUsernameQuery("select u.username, r.role from USER u inner join users_roles ur on(u.userId=ur.users) inner join ROLES r on(ur.roles=r.roleId) where u.username=?");
 				
 			auth
 			.inMemoryAuthentication()
