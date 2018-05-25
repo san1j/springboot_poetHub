@@ -7,28 +7,28 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import com.poethub.demo.service.userService;
+import com.poethub.demo.service.UserService;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
  
-import com.poethub.demo.model.userModel;
+import com.poethub.demo.model.UserModel;
 
 @Controller
 public class SignUpController {
 	@Autowired
-	private userService userService;
+	private UserService userService;
 	
 	@GetMapping("/SignUp")
  	public String home(Model model) {
-		model.addAttribute("userModel", new userModel());
+		model.addAttribute("userModel", new UserModel());
 		return "signup";
 	}
 	
 	@PostMapping("/SignUp")
-	public String signup(@Valid userModel userModel,BindingResult bindingResult, Model model) {
+	public String signup(@Valid UserModel userModel,BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "signup";
         }
@@ -39,9 +39,12 @@ public class SignUpController {
 			bindingResult.rejectValue("username", "error.username", "The username already exists");
 			return "signup";
 		}
+		
+		userModel.setEnabled(true);
 		userService.saveUser(userModel);
-		model.addAttribute("username", userModel.getUsername());
-	    return "userPage";
+		model.addAttribute("successMessage", "Registration Successful! Please login.");
+        model.addAttribute("userModel", new UserModel());
+	    return "signup";
 	}
 		
 }
