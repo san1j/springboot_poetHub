@@ -6,16 +6,19 @@
 
 <body>
 	<div class="container col-xs-12 col-sm-8 col-md-6 mx-auto">
-		<form class="border-class" th:action="@{/login}" th:object="${userModel}" method="POST">
+		<form class="border-class" th:action="@{/login}" method="POST">
+			<div th:if="${param.error}">
+                        <div class="alert alert-danger">
+                            Invalid username or password.
+                        </div>
+                    </div>
 			<div class="form-group">
 				<label for="username">Username</label> 
-				<input type="text" th:field="*{username}"
-					placeholder="Username" class="form-control" required="true" >
+				<input type="text" name="username" id="username" placeholder="Username" class="form-control" required="true" >
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label> 
-				<input type="password" th:field="*{password}"
-					placeholder="Password" class="form-control" required="true"/>
+				<input type="password" name="password" id="password" placeholder="Password" class="form-control" required="true"/>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
