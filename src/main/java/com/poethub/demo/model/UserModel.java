@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,11 +19,12 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "USER")
 public class UserModel {
-	// public static final String user_role = "USER";
-
+ 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
@@ -50,16 +53,20 @@ public class UserModel {
 	private String lastName;
 
 	@NotNull
-	@Size(min = 5, max = 30, message = "Password must be between 5 and 16 characters")
+	@Size(min = 5, message = "Password must be atleast 5 characters")
 	@Column(name = "password", nullable = false)
+	@JsonIgnore
 	private String password;
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "users"), inverseJoinColumns = @JoinColumn(name = "roles"))
-	private Collection<RolesModel> roles;
+//	@ManyToMany(cascade = CascadeType.ALL)
+//	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_Id"), inverseJoinColumns = @JoinColumn(name = "role_Id"))
+//	private Collection<RolesModel> roles;
 	// this relationship is mapped by a field named userId, so don't worry
 	@OneToMany(mappedBy="userModel")
 	private Collection<PoemModel> poems;
+	
+	@Column(name = "role", nullable= false)
+	private String role;
 
 	public String getUsername() {
 		return username;
@@ -117,14 +124,32 @@ public class UserModel {
 		this.enabled = enabled;
 	}
 
-	public Collection<RolesModel> getRoles() {
-		return roles;
+	public Collection<PoemModel> getPoems() {
+		return poems;
 	}
 
-	public void setRoles(Collection<RolesModel> roles) {
-		this.roles = roles;
+	public void setPoems(Collection<PoemModel> poems) {
+		this.poems = poems;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+//	public Collection<RolesModel> getRoles() {
+//		return roles;
+//	}
+//
+//	public void setRoles(Collection<RolesModel> roles) {
+//		this.roles = roles;
+//	}
+	
 	// override equals and hashcode
+	
+	
 
 }

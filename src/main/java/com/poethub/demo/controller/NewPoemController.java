@@ -3,14 +3,14 @@ package com.poethub.demo.controller;
 import java.security.Principal;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import com.poethub.demo.model.PoemModel;
 import com.poethub.demo.model.UserModel;
@@ -26,19 +26,21 @@ public class NewPoemController {
 	UserService userService;
 	
 	@GetMapping("/newPoem")
- 
 	public String newPoem(Principal principal, Model model) {
-	PoemModel poemModel = new PoemModel();
-	List<UserModel> users = userService.findByUsername(principal.getName());
-	poemModel.setUserModel(users.get(0));
-	model.addAttribute("poemModel", poemModel);
-	return "home";
+		List<UserModel> users = userService.findByUsername(principal.getName());
+		PoemModel poemModel = new PoemModel();
+		poemModel.setUserModel(users.get(0));
+		model.addAttribute("poemModel", poemModel);
+		return "newPoem";
 	}
 	
 	@PostMapping("/newPoem")
-	public String submitPoem(PoemModel poemModel) {
+	public String submitPoem(PoemModel poemModel,BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+            return "newPoem";
+        }
 		poemService.savePoem(poemModel);
-		return "home";
+		return "redirect:userPage/"+ poemModel.getUserModel().getUsername();
 		
 	}
 }

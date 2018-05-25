@@ -5,11 +5,11 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
  import com.poethub.demo.model.UserModel;
-import com.poethub.demo.repo.RoleRepo;
-import com.poethub.demo.repo.UserRepo;
+ import com.poethub.demo.repo.UserRepo;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,11 +18,14 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepo userRepo;
 	@Autowired
-	private RoleRepo roleRepo;
+	private PasswordEncoder passwordEncoder;
+	 
 
 	@Override
 	public void saveUser(UserModel userModel) {
-		userModel.setRoles(Collections.singletonList( roleRepo.findByRole(roles)) );
+		//userModel.setRoles(Collections.singletonList( roleRepo.findByRole(roles)) );
+		userModel.setPassword(passwordEncoder.encode(userModel.getPassword()));
+		userModel.setRole(roles);
 		userRepo.save(userModel);
 	}
 
