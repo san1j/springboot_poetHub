@@ -6,10 +6,23 @@
 
 <body>
 
-<div class="jumbotron mx-auto col-lg-10 col-sm-8" style = "margin:30px">
-  <h1 th:text="'Hi '+${username}+ ','">  </h1>
-  <h4> Welcome! </h4>
-</div>
+	<div class="jumbotron mx-auto col-lg-11 col-sm-9" >
+		<h1 th:text="'Hi '+${userModel.username}+ ','"></h1>
+		<h4>Welcome!</h4>
+	</div>
+	
+	<div class = "row">
+	<div class="jumbotron col-md-5  mx-auto" id="poem" th:each= "poem:${poems}">
+		<h1 th:text="${poem.title}">poem 1</h1>
+		<h6 th:text="'Poem by: '+ ${poem.userModel.username}"> author: </h6>
+		<pre th:utext="${poem.body}">
+			body
+		</pre>
+
+		<!-- show edit button if user is a poet-->
+		<button type="button" class="btn btn-warning">Edit</button>
+	</div>
+	</div>
 
 
 
