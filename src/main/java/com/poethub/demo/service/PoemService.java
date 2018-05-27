@@ -10,4 +10,6 @@ import com.poethub.demo.model.UserModel;
 	public void savePoem(PoemModel poemModel);
 	List<PoemModel>findAllByOrderByPoemIdDesc();
 	List<PoemModel>findAllByUserModelOrderByPoemIdDesc(UserModel userModel);
+	PoemModel findByPoemId(int poemId);
+	void deletePoem(PoemModel poemModel);
 }
