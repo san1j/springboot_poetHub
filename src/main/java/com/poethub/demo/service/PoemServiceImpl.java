@@ -29,4 +29,14 @@ public class PoemServiceImpl implements PoemService{
 		return poemRepo.findAllByUserModelOrderByPoemIdDesc(userModel);
 	}
 
+	@Override
+	public PoemModel findByPoemId(int poemId) {
+		return poemRepo.findByPoemId(poemId);
+	}
+
+	@Override
+	public void deletePoem(PoemModel poemModel) {
+		poemRepo.delete(poemModel);
+	}
+
 }
