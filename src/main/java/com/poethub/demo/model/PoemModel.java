@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class PoemModel {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int poemId;
 	
 	@NotNull (message = "Please enter a title")
@@ -29,7 +29,6 @@ public class PoemModel {
 	private String body;
 	
 	@ManyToOne
-	@NotNull
 	@JoinColumn(name="userId", referencedColumnName="userId", nullable = false)
 	private UserModel userModel;
 	
