@@ -2,17 +2,11 @@ package com.poethub.demo.model;
 
 import java.util.Collection;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
@@ -59,10 +53,7 @@ public class UserModel {
 	@JsonIgnore
 	private String password;
 
-//	@ManyToMany(cascade = CascadeType.ALL)
-//	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_Id"), inverseJoinColumns = @JoinColumn(name = "role_Id"))
-//	private Collection<RolesModel> roles;
-	// this relationship is mapped by a field named userId, so don't worry
+
 	@OneToMany(mappedBy="userModel")
 	private Collection<PoemModel> poems;
 	
@@ -141,16 +132,5 @@ public class UserModel {
 		this.role = role;
 	}
 	
-//	public Collection<RolesModel> getRoles() {
-//		return roles;
-//	}
-//
-//	public void setRoles(Collection<RolesModel> roles) {
-//		this.roles = roles;
-//	}
 	
-	// override equals and hashcode
-	
-	
-
 }

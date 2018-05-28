@@ -19,15 +19,12 @@
 			body
 		</pre>
 
-		<!-- show edit button if user is a poet-->
 	  <a th:href="@{'/editPoem/{id}'(id=${poem.poemId})}">
 		<button type="button" class="btn btn-warning">Edit</button></a>
 	  <a th:href="@{'/deletePoem/{id}'(id=${poem.poemId})}">
 		<button type="button" class="btn btn-danger">Delete</button></a>
 	</div>
 	</div>
-
-
 
 </body>
 

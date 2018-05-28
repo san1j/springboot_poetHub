@@ -9,5 +9,4 @@ public interface UserService {
 		public void saveUser(UserModel userModel);
 		List<UserModel> findByUsername(String username);
 		List<UserModel> findByEmail(String email);
-		
 }
