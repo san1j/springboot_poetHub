@@ -17,7 +17,7 @@ body {
 }
 
 .figure-caption {
-	font-size: 30px;
+	font-size: 2em;
 	padding: 20px;
 	color: black;
 }
@@ -45,12 +45,12 @@ body {
 
 #poem {
 	background-color: #cde7f0;
-	min-width:100%;
+	min-size:100%; !important
 }
 
 .row {
-	margin-left: 80px;
-	margin-right: 80px;
-	margin-bottom: 80px;
-	margin-top: 30px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	margin-top: 5%;
 }

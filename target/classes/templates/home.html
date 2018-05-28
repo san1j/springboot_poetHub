@@ -5,7 +5,7 @@
 </head>
 
 <body>
-	<div class="container col-md-5 col-sm-4 col-lg-12">
+	<div class="container col-md-11 col-sm-12 col-xs-12 col-lg-12">
 		<figure class="figure">
 			<img
 				src="https://c.pxhere.com/photos/cc/0e/fountain_pens_fountain_pen_filler_ink_leave_letters_nostalgic_handwritten-623578.jpg!d"
@@ -26,18 +26,18 @@
 	<figure />
 
 
-	<div class="container col-md-5 col-sm-4 col-lg-12">
+	<div class="container col-md-10 col-sm-10 col-xs-12 col-lg-12">
 		<h5 class="text-center font-weight-bold" style="margin-top: 30px;">Most
 			Recent</h5>
 
-		<div class="row">
-			<div class="jumbotron container col-md-5  mx-auto" id="poem"
+		 <div class="row">
+			<div class="jumbotron container col-md-12 col-xs-12 col-sm-12 col-lg-5  mx-auto" id="poem"
 				th:each="poem:${allpoems}">
 				<h1 th:text="${poem.title}">poem 1</h1>
 				<h6 th:text="'Poem by: '+ ${poem.userModel.username}">author:</h6>
 				<pre th:utext="${poem.body}">body </pre>
 			</div>
-		</div>
+		 </div>
 	</div>
 
 </body>
