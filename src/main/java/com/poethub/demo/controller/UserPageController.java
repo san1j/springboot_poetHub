@@ -47,7 +47,7 @@ public class UserPageController {
 		PoemModel poemModel = poemService.findByPoemId(id);
 		if(poemModel!=null && principal.getName().equals(poemModel.getUserModel().getUsername())) {
 			poemService.deletePoem(poemModel);
-			return "redirect:/userPage/"+poemModel.getUserModel().getUsername();
+			return "redirect:/userPage/" + poemModel.getUserModel().getUsername();
 		}
 		return "error";
 	}

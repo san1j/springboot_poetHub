@@ -5,39 +5,41 @@
 </head>
 
 <body>
-<div class="container col-md-5 col-lg-12">
-	<figure class="figure">
-		<img
-			src="https://c.pxhere.com/photos/cc/0e/fountain_pens_fountain_pen_filler_ink_leave_letters_nostalgic_handwritten-623578.jpg!d"
-			class="img-fluid mx-auto d-block col-lg-9" alt="ink and paper">
+	<div class="container col-md-5 col-lg-12">
+		<figure class="figure">
+			<img
+				src="https://c.pxhere.com/photos/cc/0e/fountain_pens_fountain_pen_filler_ink_leave_letters_nostalgic_handwritten-623578.jpg!d"
+				class="img-fluid mx-auto d-block col-lg-9" alt="ink and paper">
 
-		<div class="text-center" id="signUp">
-			<a th:href="@{/SignUp}">
-				<button type="button" class="btn btn-dark btn-lg">Sign Up, it's
-					free!</button>
-			</a>
-		</div>
+			<div class="text-center" id="signUp">
+				<a th:href="@{/SignUp}">
+					<button type="button" class="btn btn-dark btn-lg">Sign Up,
+						it's free!</button>
+				</a>
+			</div>
 		</figure>
 	</div>
 
-		<figcaption
-			class="figure-caption text-center font-weight-bold font-italic font-size">Share
-			your poems with the world!</figcaption>
-		<figure />
+	<figcaption
+		class="figure-caption text-center font-weight-bold font-italic font-size">Share
+		your poems with the world!</figcaption>
+	<figure />
+
+
+	<div class="container col-md-5 col-lg-12">
+		<h5 class="text-center font-weight-bold" style="margin-top: 30px;">Most
+			Recent</h5>
+
+		<div class="row">
+			<div class="jumbotron container col-md-5  mx-auto" id="poem"
+				th:each="poem:${allpoems}">
+				<h1 th:text="${poem.title}">poem 1</h1>
+				<h6 th:text="'Poem by: '+ ${poem.userModel.username}">author:</h6>
+				<pre th:utext="${poem.body}">body </pre>
+			</div>
 		</div>
-		
-		<div class="container col-md-5 col-lg-12">
-		<h5 class="text-center font-weight-bold" style="margin-top:30px;">Most Recent</h5>
-		
-		<div class = "row">
-	     <div class="jumbotron container col-md-5  mx-auto" id="poem" th:each= "poem:${allpoems}">
-		<h1 th:text="${poem.title}">poem 1</h1>
-		<h6 th:text="'Poem by: '+ ${poem.userModel.username}"> author: </h6>
-		<pre th:utext="${poem.body}">body </pre>
-	 	</div>
-		</div>
-		</div>
-	
+	</div>
+
 </body>
 
 <div th:replace="fragments/footer">footer</div>

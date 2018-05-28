@@ -1,6 +1,5 @@
 package com.poethub.demo.controller;
 
-import java.util.List;
 
 import javax.validation.Valid;
 
@@ -10,7 +9,6 @@ import org.springframework.ui.Model;
 import com.poethub.demo.service.UserService;
 
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
  

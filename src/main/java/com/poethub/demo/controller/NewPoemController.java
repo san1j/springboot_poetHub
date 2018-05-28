@@ -41,6 +41,5 @@ public class NewPoemController {
         }
 		poemService.savePoem(poemModel);
 		return "redirect:userPage/"+ poemModel.getUserModel().getUsername();
-		
 	}
 }

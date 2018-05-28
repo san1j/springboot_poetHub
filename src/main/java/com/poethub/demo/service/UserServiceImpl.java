@@ -1,7 +1,5 @@
 package com.poethub.demo.service;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +21,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void saveUser(UserModel userModel) {
-		//userModel.setRoles(Collections.singletonList( roleRepo.findByRole(roles)) );
 		userModel.setPassword(passwordEncoder.encode(userModel.getPassword()));
 		userModel.setRole(roles);
 		userRepo.save(userModel);
@@ -39,7 +36,4 @@ public class UserServiceImpl implements UserService {
 		return userRepo.findByEmail(email);
 	}
 
-	
-
-	
 }
