@@ -21,6 +21,6 @@ public class HomeController {
  	public String home(Model model) {
 		List<PoemModel> poems = poemService.findAllByOrderByPoemIdDesc();
 		model.addAttribute("allpoems", poems);
-		return "home";
+		return "home" ;
 	}
 }
