@@ -38,21 +38,20 @@ public class UserModel {
 	private String email;
 
 	@NotNull
-	@Size(min = 5, max = 30, message = "First Name must be between 5 and 30 characters")
+	@Size(min = 2, max = 30, message = "First Name must be between 2 and 30 characters")
 	@Column(name = "firstName", nullable = false)
 	private String firstName;
 
 	@NotNull
-	@Size(min = 5, max = 30, message = "Last Name must be between 5 and 16 characters")
+	@Size(min = 2, max = 30, message = "Last Name must be between 2 and 30 characters")
 	@Column(name = "lastName", nullable = false)
 	private String lastName;
 
-	@NotNull
+	//@NotNull
 	@Size(min = 5, message = "Password must be atleast 5 characters")
-	@Column(name = "password", nullable = false)
+	@Column(name = "password", nullable = true)
 	@JsonIgnore
 	private String password;
-
 
 	@OneToMany(mappedBy="userModel")
 	private Collection<PoemModel> poems;
