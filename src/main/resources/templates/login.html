@@ -5,30 +5,36 @@
 </head>
 
 <body>
-	<div class="container col-xs-12 col-sm-8 col-md-6 mx-auto">
-		<form class="border-class" th:action="@{/login}" method="POST">
+	<div class="container col-xs-12 col-sm-8 col-md-6 mx-auto border-class">
+		<div class="text-center">
+			<a th:href="@{/login/auth}">
+				<button class="btn btn-danger btn-block">
+					<i class="fa fa-google fa-fw text-left"></i> Login with Google
+				</button>
+			</a>
+		</div>
+		<hr>
+		<form th:action="@{/login}" method="POST">
 			<div th:if="${param.error}">
-                        <div class="alert alert-danger">
-                            Invalid username or password.
-                        </div>
-                    </div>
-			<div class="form-group">
-				<label for="username">Username</label> 
-				<input type="text" name="username" id="username" placeholder="Username" class="form-control" required="true" >
+				<div class="alert alert-danger">Invalid username or password.
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="password">Password</label> 
-				<input type="password" name="password" id="password" placeholder="Password" class="form-control" required="true"/>
+				<label for="username">Username</label> <input type="text"
+					name="username" id="username" placeholder="Username"
+					class="form-control" required="true">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label> <input type="password"
+					name="password" id="password" placeholder="Password"
+					class="form-control" required="true" />
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
+
 		</form>
 	</div>
-	 
-	<div>
-	<a  th:href="@{/login/auth}">Login through gmail</a>
-	</div>
 
-	
+
 </body>
 
 <div th:replace="fragments/footer">footer</div>
