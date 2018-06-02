@@ -32,7 +32,7 @@ public class HomeController {
 			if(userService.findByUsername(details.get("name")).isEmpty() && userService.findByUsername(details.get("email")).isEmpty())
 			userService.saveUser(initializeUser(details,new UserModel()));
 		    }
-		return "home ";
+		return "home";
 	}
 	
 	private UserModel initializeUser(Map<String,String> details,UserModel userModel) {
