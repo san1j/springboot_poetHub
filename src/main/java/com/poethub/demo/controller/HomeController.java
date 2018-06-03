@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,13 +26,15 @@ public class HomeController {
 	private PoemService poemService;
 	@Autowired
 	private UserService userService;
-
+	
+	@SuppressWarnings("unchecked")
 	@RequestMapping(method = RequestMethod.GET)
-	public String home(Model model,OAuth2Authentication auth) {
+	public String home(Model model,Authentication auth) {
 		List<PoemModel> poems = poemService.findAllByOrderByPoemIdDesc();
 		model.addAttribute("allpoems", poems);
-		if(auth!=null) {
-			Map<String, String> details =(Map<String, String>) auth.getUserAuthentication().getDetails();
+		if(auth!=null && !(auth instanceof AnonymousAuthenticationToken) && !(auth instanceof UsernamePasswordAuthenticationToken)) {
+			OAuth2Authentication oauth = (OAuth2Authentication) SecurityContextHolder.getContext().getAuthentication();
+			Map<String, String> details =(Map<String, String>) oauth.getUserAuthentication().getDetails();
 			if(userService.findByUsername(details.get("name")).isEmpty() && userService.findByUsername(details.get("email")).isEmpty())
 			userService.saveUser(initializeUser(details,new UserModel()));
 		    }
