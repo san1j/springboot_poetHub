@@ -34,3 +34,12 @@ then run the app:
 ```
 $ java -jar target/poetHub-0.0.1-SNAPSHOT.jar
 ```
+
+After running the app, point your browser to [https://localhost:8080](https://localhost:8080)
+
+Use the following username and password to login:
+
+username: anonymous
+
+password: password
+
