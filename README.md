@@ -26,3 +26,11 @@ Before running, check if you have maven installed:
 ```
 $ mvn -v
 ```
+and then
+```
+$ mvn clean package
+```
+then run the app:
+```
+$ java -jar target/poetHub-0.0.1-SNAPSHOT.jar
+```
