@@ -43,3 +43,5 @@ username: anonymous
 
 password: password
 
+## License:
+MIT
