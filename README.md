@@ -9,6 +9,8 @@ You can change the port number as well as the username and password
 in the src/main/resources/application.properties file
 
 ## How to Run
+Clone/ download this repo
+
 Use any of the following ways to run the app
 
 ### Maven wrapper:
