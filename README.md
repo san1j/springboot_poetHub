@@ -24,7 +24,7 @@ Use any of the following ways to run the app
 ### Maven wrapper:
 Build the jar file:
 ```
-$ scripts/mvnw clean package
+$ ./mvnw clean install
 ```
 run it:
 ```
@@ -38,7 +38,7 @@ $ mvn -v
 ```
 and then
 ```
-$ mvn clean package
+$ mvn clean install
 ```
 then run the app:
 ```
