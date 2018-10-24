@@ -17,9 +17,13 @@ You can change the port number as well as the username and password
 in the src/main/resources/application.properties file
 
 ## How to Run
-Clone/ download this repo
+* Clone/ download this repo
 
-Use any of the following ways to run the app
+* Follow the instructions [here](https://developers.google.com/identity/sign-in/web/sign-in) to get a client ID 
+
+* Add your client ID and client secret to the application.properties file
+
+* Use any of the following ways to run the app
 
 ### Maven wrapper:
 Build the jar file:
