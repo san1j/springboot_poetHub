@@ -1,8 +1,8 @@
 # PoetHub
 A SpringBoot web app for sharing poems
 
-## Link to the project website
-[Live Website](https://poethub.herokuapp.com)
+<!-- ## Link to the project website
+[Live Website](https://poethub.herokuapp.com) -->
 
 ## Project pics
 <img src ="https://user-images.githubusercontent.com/36819928/44752163-3ac62980-aae8-11e8-9456-d8bb1db55ec8.png" width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
