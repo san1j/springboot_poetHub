@@ -1,5 +1,5 @@
 # PoetHub
-A SpringBoot web app for sharing poems
+A SpringBoot/ Spring responsive web app with Google OAuth integration
 
 <!-- ## Link to the project website
 [Live Website](https://poethub.herokuapp.com) -->
